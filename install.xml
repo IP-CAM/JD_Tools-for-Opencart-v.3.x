@@ -6,7 +6,7 @@
 	<author>JD</author>
 	<description><![CDATA[
 	Модифікатор для меню.
-	Версія для Opencart 2.x
+	Версія для Opencart 3.x
 ]]></description>
 	<link>zelenuj@gmail.com</link>
 	<file path="admin/controller/common/column_left.php">
