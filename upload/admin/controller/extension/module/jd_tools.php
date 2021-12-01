@@ -30,7 +30,7 @@ class ControllerExtensionModuleJDTools extends Controller {
 		foreach ($required as $key => &$value) {
 			if(is_null($value)) {
 				$value = $this->config->get($key); // now it includes default values from system/config/$module_name
-				if(is_null($value)) $this->log->write("admin_extension_module_jd_tools: required setting not exists! key = " . $key);
+				if(is_null($value)) $this->log->write("admin_extension_{$this->code}: required setting not exists! key = " . $key);
 			}
 		}
 
