@@ -5,9 +5,14 @@
 	"extra": {
 		"src-dir" : "upload",
 		"mappings" : [
+			"admin/controller/extension/module/jd_tools.php",
+
+			"admin/language/uk-ua/extension/module/jd_tools.php",
 			"admin/language/uk-ua/tool/jd_tools.php",
 
-			"admin/view/template/tool/jd_tools_main.twig",
+			"admin/model/extension/module/jd_tools.php",
+
+			"admin/view/template/tool/jd_tools.twig",
 			"admin/view/template/tool/jd_tools/snippets/button.twig",
 			"admin/view/template/tool/jd_tools/snippets/input_field.twig",
 			"admin/view/template/tool/jd_tools/snippets/progressbar.twig",
@@ -16,16 +21,17 @@
 
 			"admin/view/stylesheet/jd_tools/main.css",
 
+			"system/config/jd_tools.php",
 			"system/library/jd_tools/viewbuilder.php"
 		],
 		"installers" : {
-			"php" : "install.php",
 			"xml" : "install.xml"
 		}
 	},
 	"require": {
 		"kotygor/opencart-extension-installer": "*",
-		"kotygor/opencart": "*"
+		"kotygor/opencart": "*",
+		"kotygor/opencart_3x_fixes": "~1"
 	},
 	"repositories": [
 		{
@@ -35,6 +41,10 @@
 		{
 			"type": "git",
 			"url": "https://github.com/kotygor/opencart"
+		},
+		{
+			"type": "git",
+			"url": "https://github.com/kotygor/opencart_3x_fixes"
 		}
 	]
 }

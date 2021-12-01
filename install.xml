@@ -15,31 +15,35 @@
 				<![CDATA[// Stats]]>
 			</search>
 			<add position="before">
-				<![CDATA[           //JD Tools
+				<![CDATA[
+			// << jd_tools_main.ocmod.xml
 			$jd_tools = array();
 
-			$items = $this->config->get('jd_tools_main_menu_items');
-			foreach($items as $item) {
-				if ($this->user->hasPermission('access', $item['route'])) {
-					$children = [];
-					if (!empty($item['children'])) {
-						foreach($children as $child) {
-							if ($this->user->hasPermission('access', $child['route'])) {
-								$children[] = [
-									'name' => $child['name'],
-									'href' => $this->url->link($child['route'], 'user_token=' . $this->session->data['user_token'], true),
-									'children' => array()
-								];
+			$items = $this->config->get('module_jd_tools_menu_items');
+			if($items) {
+				foreach ($items as $item) {
+					if ($this->user->hasPermission('access', $item['route'])) {
+						$children = [];
+						if (!empty($item['children'])) {
+							foreach ($children as $child) {
+								if ($this->user->hasPermission('access', $child['route'])) {
+									$children[] = [
+										'name' => $child['name'],
+										'href' => $this->url->link($child['route'], 'user_token=' . $this->session->data['user_token'], true),
+										'children' => array()
+									];
+								}
 							}
 						}
+						$jd_tools[] = [
+							'name' => $item['name'],
+							'href' => $this->url->link($item['route'], 'user_token=' . $this->session->data['user_token'], true),
+							'children' => $children,
+						];
 					}
-					$jd_tools[] = [
-						'name' => $item['name'],
-						'href' => $this->url->link($item['route'], 'user_token=' . $this->session->data['user_token'], true),
-						'children' => $children,
-					];
 				}
 			}
+			else $jd_tools = [];
 			$data['menus'][] = array(
 				'id'        => 'jd-tools',
 				'icon'      => 'fa-cog',
@@ -47,6 +51,7 @@
 				'href'      => '',
 				'children'  => $jd_tools,
 			);
+			// >> jd_tools_main.ocmod.xml
 ]]>
 			</add>
 		</operation>
