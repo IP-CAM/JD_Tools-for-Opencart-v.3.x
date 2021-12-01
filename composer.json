@@ -1,6 +1,7 @@
 {
 	"name": "kotygor/jd_tools_main",
 	"descripiton": "Мої інструменти. Головне меню і допоміжні засоби",
+	"minimum-stability": "dev",
 	"type": "opencart-extension",
 	"extra": {
 		"src-dir" : "upload",
