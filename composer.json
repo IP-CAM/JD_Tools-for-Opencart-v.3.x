@@ -24,17 +24,12 @@
 		}
 	},
 	"require": {
-		"kotygor/opencart-extension-installer": "*",
-		"kotygor/opencart": "*"
+		"kotygor/opencart-extension-installer": "*"
 	},
 	"repositories": [
 		{
 			"type": "git",
 			"url": "https://github.com/kotygor/opencart-extension-installer"
-		},
-		{
-			"type": "git",
-			"url": "https://github.com/kotygor/opencart"
 		}
 	]
 }
